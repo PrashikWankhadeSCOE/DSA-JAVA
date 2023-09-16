@@ -26,8 +26,8 @@ public class Program39 {
 
         for(int i =0;i<arr.length;i++){
             int count=0;
-            for(int j = i;j<arr.length;j++){
-                if(arr[j]<arr[i]){
+            for(int j = i+1;j<arr.length;j++){
+                if(arr[j]<=arr[i]){
                     count++;
                 }
                 if(count>=arr.length-i-1){
@@ -35,6 +35,7 @@ public class Program39 {
                 }
             }
         }
+        ll.add(arr.length-1);
         return ll;
     }
 
