@@ -1,3 +1,5 @@
+package ArrayBasics;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,16 +27,16 @@ public class Program6 {
         boolean x = false;
         int c = 0;
         for(int i : arr){
-            if(from==i || to == i){
+            if(from<=i && i <= to){
                 c++;
             }
+            System.out.print(i+" "+c +" ");
 
         }
-        if(c == 2){
+        if(c >= to-from+1){
             x = true;
         }
         return x;
     }
 
 }
-
