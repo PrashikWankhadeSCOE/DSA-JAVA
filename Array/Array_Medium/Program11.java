@@ -31,7 +31,7 @@ public class Program10 {
             if(i+k>arr.length)
                 break;
             for(int j = i;j<i+k;j++){
-                System.out.print(arr[j]+" ");
+                //System.out.print(arr[j]+" ");
                 //try{
                 if(arr[j]>max)
                 max = arr[j];
@@ -39,7 +39,7 @@ public class Program10 {
 
                 //}
             }
-            System.out.println("");
+            //System.out.println("");
             al.add(max);
         }
         return al;
