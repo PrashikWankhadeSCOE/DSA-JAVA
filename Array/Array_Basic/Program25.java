@@ -3,7 +3,6 @@ package ArrayBasics;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Program25 {
     public static void main (String [] args)throws IOException{
@@ -25,12 +24,12 @@ public class Program25 {
         int secMax = Integer.MIN_VALUE;
         //Arrays.sort(arr);
         for(int i = arr.length-1;i>=0;i--){
-            if(arr[i]>max){
+            if(arr[i]>=max){
                 //secMax = arr[i];
                 secMax = max;
                 max = arr[i];
             }
-            else if(arr[i]>secMax && arr[i]!=max){
+            if(arr[i]>secMax && arr[i]!=max){
                 secMax= arr[i];
             }
         }
