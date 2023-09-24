@@ -14,7 +14,7 @@ public class Program16 {
         for(int i = 0;i<arr.length;i++){
             arr[i]=str.charAt(i)-0;
         }
-        int rem = 0;
+        int rem = -1;
         for(int i = 0;i<arr.length;i++){
             if(arr[i]=='1'-0){
                 rem = i;
