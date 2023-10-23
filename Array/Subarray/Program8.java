@@ -29,3 +29,39 @@
  * 1 ≤ N ≤ 500
  * -10^2 ≤ Arri ≤ 10^2
  */
+
+import java.util.*;
+class Demo{
+	/*
+	 * TC : O(N^2)
+	 * SC : O(1)
+	 *
+	 */
+	static int maxPro(int arr[]){
+		int maxPro = Integer.MIN_VALUE;
+
+		for(int i = 0;i<arr.length;i++){
+			int pro = arr[i];
+			for(int j = i+1 ; j<arr.length;j++){
+				
+				if(pro>maxPro){
+					maxPro = pro;
+				}
+				pro = pro*arr[j];
+			}
+		}
+		return maxPro;
+	}
+	public static void main(String [] ags){
+                Scanner sc = new Scanner(System.in);
+                int n = sc.nextInt();
+
+                int arr[] = new int[n];
+
+                for(int i = 0;i<arr.length;i++){
+                        arr[i] = sc.nextInt();
+
+                }
+                System.out.println(maxPro(arr));
+        }
+}

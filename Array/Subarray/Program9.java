@@ -43,3 +43,39 @@
  * 1 ≤ K ≤ N
  * 0 ≤ arr[i] ≤ 10^7
  */
+
+import java.util.*;
+
+class Demo{
+	/*
+	 * TC : O(N^2)
+	 * SC : O(1)
+	 */
+	static void maxOfAll(int arr[],int k){
+
+		for(int i = 0;i<arr.length-k+1;i++){
+			int max = Integer.MIN_VALUE;
+			for(int j = i;j<i+k;j++){
+				
+
+				if(arr[j]>max)
+					max = arr[j];
+			}
+			System.out.println("Max = "+ max);
+		}
+	}
+	public static void main(String [] ags){
+                Scanner sc = new Scanner(System.in);
+                int n = sc.nextInt();
+		
+		int k = sc.nextInt();
+
+                int arr[] = new int[n];
+
+                for(int i = 0;i<arr.length;i++){
+                        arr[i] = sc.nextInt();
+
+                }
+                maxOfAll(arr,k);
+        }
+}
