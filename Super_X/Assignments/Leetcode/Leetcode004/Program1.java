@@ -29,10 +29,10 @@ import java.util.*;
 
 class Demo{
 	static String multiplyString(String num1,String num2){
-		long n1 = Long.valueOf(num1);
-		long n2 = Long.valueOf(num2);
+		BigInteger n1 = new BigInteger(num1);
+		BigInteger n2 = new BigInteger(num2);
 
-		long mult = n1*n2;
+		BigInteger mult = n1.multiply(n2);
 		return String.valueOf(mult);
 	}
 	public static void main(String [] args){
