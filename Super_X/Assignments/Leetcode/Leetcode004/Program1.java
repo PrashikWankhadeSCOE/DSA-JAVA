@@ -1,5 +1,4 @@
-// Not Done
-//
+
 /* 
  * Multiply Strings (LeetCode - 43)
  * 
