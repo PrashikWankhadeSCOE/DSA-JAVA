@@ -28,3 +28,40 @@
  * 1 <= N <= 10^5
  * 0 <= A[] <= 1
  */
+
+import java.util.*;
+
+class Demo{
+	/*
+	 * TC : O(N^2)
+	 * SC : O(1)
+	 *
+	 */
+	static int largest(int arr[]){
+		int len = 0;
+		for(int i = 0;i<arr.length;i++){
+			int zero = 0;
+			int one = 0;
+			for(int j = i;j<arr.length;j++){
+				if(arr[j] == 1)
+					one++;
+				else
+					zero++;
+				if(zero == one && len<j-i+1)
+					len = j-i+1;
+			}
+		}
+		return len;
+	}
+	public static void main(String [] at){
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+
+		int arr[] = new int[n];
+		for(int i =0;i<arr.length;i++){
+			arr[i] = sc.nextInt();
+		}
+		System.out.println(largest(arr));
+	}
+}

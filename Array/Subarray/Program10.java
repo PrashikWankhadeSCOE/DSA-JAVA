@@ -34,27 +34,31 @@
 import java.util.*;
 
 class Demo{
+
+	/*
+	 * TC : O(N^2)
+	 * SC : O(1)
+	 */
 	static int maxSum(int arr[]){
-		int maxsum = 0;
+		int maxSum = Integer.MIN_VALUE;
+	    
 		for(int i = 0;i<arr.length;i++){
-			int sum = 0;
-			for(int j = i;j<arr.length;j++){
-				
-				sum=sum+arr[j];
-				
-				System.out.print(arr[j]+" ");
-				
-				if(sum > maxsum && (i==j || arr[j]>arr[j-1])){
-					maxsum = sum;
-				}
-				else if(arr[j-1]>arr[j]){
+		 	int sum = arr[i];
+	        	if(sum>maxSum)
+		        maxSum = sum;
+	    
+		        for(int j = i+1;j<arr.length;j++){
+		    		if(arr[j]>arr[j-1]){
+		                	sum = sum+arr[j];
+    				}
+     				else
 					break;
-				}
-				System.out.println(maxsum);
+	     			if(maxSum<sum){
+		     			maxSum=sum;
+	       			}
 			}
 		}
-		return maxsum;
-				
+		return maxSum;				
 	}
 	public static void main(String [] args){
 		Scanner sc = new Scanner(System.in);
