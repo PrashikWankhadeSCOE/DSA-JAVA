@@ -41,14 +41,18 @@ class Demo{
 		int maxPro = Integer.MIN_VALUE;
 
 		for(int i = 0;i<arr.length;i++){
-			int pro = arr[i];
+			int pro = arr[I];
+
+			if(pro>maxPro){
+				maxPro = pro;
+			}
 			for(int j = i+1 ; j<arr.length;j++){
 				
+				pro = pro*arr[j];
+
 				if(pro>maxPro){
 					maxPro = pro;
-				}
-				pro = pro*arr[j];
-			}
+				}			}
 		}
 		return maxPro;
 	}
