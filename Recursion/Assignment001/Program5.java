@@ -1,4 +1,4 @@
-//Not Done
+
 //WAP to check whether a number is prime or not
 //
 
