@@ -24,10 +24,18 @@ class Demo{
 		}
 		return list;
 	}
+	List dividen(String str,int n){
+		List list = new ArrayList();
+		for(int i = 0;i<str.length()/n;i++){
+			list.add(str.substring(i*n,n*(i+1)));
+		}
+		return list;
+	}
 	public static void main(String [] args){
                 Scanner sc = new Scanner(System.in);
                 String str = sc.nextLine();
                 int n = sc.nextInt();
 		System.out.println(new Demo().divide(str,n));
+		System.out.println(new Demo().dividen(str,n));
         }
 }
