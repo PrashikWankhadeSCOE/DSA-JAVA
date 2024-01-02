@@ -38,4 +38,72 @@
     Explanation:
       Testcase 1: Inserting 2, 4, 3, and 5 onto the stack. Returning top element which is 5.
       Finding 8 will give No, as 8 is not in the stack.
-*/  
+*/
+
+import java.util.*;
+
+class Solution{
+	public static void insert(Stack<Integer> st, int x){
+        	st.push(x); 
+    	}
+    
+        public static void remove(Stack<Integer> st){
+        	int x = st.pop();
+    	}
+    	public static void headOf_Stack(Stack<Integer> st){
+        	int x = st.peek();
+        	System.out.println(x + " ");
+	}
+    
+    
+    	public static void find(Stack<Integer> st, int val){
+        	if(st.search(val)!=-1){
+            		System.out.println("Yes");
+        	}
+        	else{
+            		System.out.println("No");
+        	}
+    	}		
+}
+class Client{
+	public static void main(String [] args){
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter the no of queries you want to perform");
+		int q = sc.nextInt();
+		
+		Stack<Integer> s = new Stack<Integer>();
+
+		Solution obj = new Solution();
+		// Even if we create the object of Solution in the for look stack 
+		// will remain the same operations done will be done from diff 
+		// object of Solution as each time new object will be created	
+		for(int i = 0;i<q;i++){
+			char ch = sc.next().charAt(0);
+			switch(ch){
+				case 'i':{
+					int data = sc.nextInt();
+					obj.insert(s,data);
+					break;
+				}
+				case 'r':{
+					obj.remove(s);
+					break;
+				}
+				case 'h':{
+					obj.headOf_Stack(s);
+					break;
+				}
+				case 'f':{
+					int data = sc.nextInt();
+					obj.find(s,data);
+					break;
+				}
+				default :{
+					System.out.println("Input is Wrong");
+					break;
+				}
+			}
+		}
+	}
+}

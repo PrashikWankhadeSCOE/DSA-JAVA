@@ -21,3 +21,40 @@
     Constraints:
     1 <= Ai <= 107
 */
+
+import java.util.*;
+
+class Solution{
+	public static Stack<Integer>_push(ArrayList<Integer> arr){
+    
+    		Stack<Integer> s = new Stack<Integer>();
+    
+    		Iterator itr = arr.iterator();
+    		while(itr.hasNext()){
+        		s.push((int)itr.next());
+    		}
+    		return s;
+	}
+	public static void _pop(Stack<Integer>s){
+    		while(!s.empty()){
+        		System.out.print(s.pop()+" ");
+    		}		
+	}
+}
+class Client{
+	public static void main(String [] args){
+		Scanner sc = new Scanner(System.in);
+
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		System.out.println("Add element to ArrayList");
+		char a;
+		do{
+			arr.add(sc.nextInt());
+			a = sc.next().charAt(0);
+		}while(a == 'y');
+		
+		Solution obj = new Solution();
+		Stack<Integer> s = obj._push(arr);
+		obj._pop(s);
+	}
+}

@@ -30,3 +30,35 @@
       1 <= X, Elements of Stack <= 103
       Sum of N over all test cases doesn't exceeds 106
 */
+
+import java.util.*;
+
+class Solution{
+	public Stack<Integer> insertAtBottom(Stack<Integer> St, int X) {
+	        Stack<Integer> s = new Stack<>();
+        	while(!St.empty()){
+            		s.push(St.pop());
+        	}
+        	s.push(X);
+        	while(!s.empty()){
+            		St.push(s.pop());
+        	}
+        	return St;
+    	}
+}
+class Client{
+	public static void main(String [] args){
+		Scanner sc = new Scanner(System.in);
+		Stack<Integer> St = new Stack<Integer>();
+		System.out.println("Enter no of stacks you want to push");
+		int q = sc.nextInt();
+		for(int i = 0;i<q;i++){
+			St.push(sc.nextInt());
+		}
+		System.out.println("Enter the element you want to add at the bottom of stack");
+		int X = sc.nextInt();
+
+		Solution obj = new Solution();
+		System.out.println(obj.insertAtBottom(St,X));
+	}
+}
