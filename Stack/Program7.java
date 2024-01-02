@@ -17,3 +17,48 @@
     Constraints:
       1 ≤ N ≤ 104
 */
+
+import java.util.*;
+
+class Solution{
+	public void push(int a,Stack<Integer> s){
+	    	s.push(a);
+	}
+	public int pop(Stack<Integer> s){
+            	return s.pop();
+	}
+	public int min(Stack<Integer> s){
+           	int x = Integer.MAX_VALUE;
+           	while(!s.empty()){
+                	int num = s.pop();
+                	if(num<x){
+                    		x = num;
+                	}
+           	}
+           	return x; 
+	}
+	public boolean isFull(Stack<Integer>s, int n){
+           	return s.size()==n;
+	}
+	public boolean isEmpty(Stack<Integer>s){
+           	return s.empty();
+	}
+}
+class Client{
+	public static void main(String [] args){
+		Scanner sc = new Scanner(System.in);
+
+		Stack<Integer> st = new Stack<Integer>();
+
+		int q = sc.nextInt();
+
+		Solution obj = new Solution();
+		while(!obj.isEmpty(st)){
+			obj.pop(st);
+		}	
+		while(!obj.isFull(st,q)){
+			obj.push(sc.nextInt(),st);
+		}
+		System.out.println(obj.min(st));
+	}
+}
