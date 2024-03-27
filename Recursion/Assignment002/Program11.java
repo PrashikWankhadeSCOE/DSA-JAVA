@@ -1,7 +1,6 @@
 //WAP to check wheather a given number is a harshad number or not 
 //Harshad number is a number that is duvisible by the sum of its digits
 
-
 import java.util.*;
 class Demo{
 	int sum(int num){
