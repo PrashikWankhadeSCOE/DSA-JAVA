@@ -1,4 +1,3 @@
-
 /*
  * Problem 4 :
  * Given an array of positive integer nums and a positive integer target,retrn the minimal length
