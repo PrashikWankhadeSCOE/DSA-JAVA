@@ -1,6 +1,5 @@
 //WAp to print the no between 1 to 10
 //
-
 class Demo{
 	void funFor(int n){
 		for(int i = 1;i<=n;i++){
